@@ -1,0 +1,1728 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель представителя</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        /* Layout */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #fff;
+            border-right: 1px solid #e5e7eb;
+            padding: 28px 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 50px 70px;
+        }
+
+        /* Logo */
+        .logo {
+            padding: 0 8px 30px;
+            border-bottom: 1px solid #eef2f7;
+            margin-bottom: 28px;
+        }
+
+            .logo h2 {
+                color: #1e3a8a;
+                font-size: 22px;
+                margin-bottom: 6px;
+            }
+
+            .logo p {
+                color: #64748b;
+                font-size: 13px;
+            }
+
+        /* Navigation */
+        .nav-item,
+        .logout {
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: left;
+            padding: 15px 18px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+            .nav-item:hover {
+                background: #f1f5f9;
+                transform: translateX(4px);
+            }
+
+            .nav-item.active {
+                background: linear-gradient(135deg, #312e81, #6d28d9);
+                color: white;
+                box-shadow: 0 8px 18px rgba(79, 70, 229, 0.28);
+                animation: navPop 0.22s ease;
+            }
+
+        .logout {
+            margin-top: auto;
+            color: #ef4444;
+            border: 1px solid #fee2e2;
+        }
+
+            .logout:hover {
+                background: #fef2f2;
+                transform: translateY(-2px);
+            }
+
+        /* Sections */
+        .section {
+            display: none;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+            .section.active {
+                display: block;
+                animation: fadeSlideIn 0.28s ease forwards;
+            }
+
+        /* Text */
+        h1 {
+            font-size: 28px;
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 14px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 20px;
+            animation: cardFadeIn 0.32s ease forwards;
+        }
+
+        /* Forms */
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 15px;
+            margin-bottom: 12px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+            select:focus,
+            input:focus {
+                border-color: #6d28d9;
+                box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.12);
+            }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+
+        .block-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin: 24px 0 14px;
+        }
+
+        /* Buttons */
+        button,
+        .btn,
+        .action-btn {
+            transition: all 0.2s ease;
+        }
+
+            button:hover,
+            .btn:hover,
+            .action-btn:hover {
+                transform: translateY(-2px);
+            }
+
+            button:active,
+            .btn:active,
+            .action-btn:active {
+                transform: translateY(0);
+                filter: brightness(0.95);
+            }
+
+            button:focus,
+            .btn:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+            }
+
+        .btn {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 18px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-right: 10px;
+            animation: fadeInBtn 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #312e81, #6d28d9);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        /* Action buttons */
+        .action-btn {
+            border: none;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .action-edit {
+            background: #eef2ff;
+            color: #4338ca;
+        }
+
+            .action-edit:hover {
+                background: #e0e7ff;
+            }
+
+        .action-rework {
+            background: #fff7ed;
+            color: #c2410c;
+        }
+
+            .action-rework:hover {
+                background: #ffedd5;
+            }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        th {
+            background: #f8fafc;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+            .badge.gray {
+                background: #f1f5f9;
+                color: #475569;
+            }
+
+            .badge.blue {
+                background: #dbeafe;
+                color: #1d4ed8;
+            }
+
+            .badge.green {
+                background: #dcfce7;
+                color: #15803d;
+            }
+
+            .badge.red {
+                background: #fee2e2;
+                color: #b91c1c;
+            }
+
+            .badge.orange {
+                background: #ffedd5;
+                color: #c2410c;
+            }
+
+        /* Success/Error modals */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal-box {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            width: 360px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+            animation: scaleIn 0.25s ease;
+        }
+
+            .modal-box h3 {
+                color: #16a34a;
+                margin-bottom: 12px;
+            }
+
+            .modal-box p {
+                margin-bottom: 20px;
+                color: #475569;
+            }
+
+        /* Edit modal */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.45);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+
+            .modal.show {
+                display: flex;
+                animation: fadeIn 0.25s ease;
+            }
+
+        .modal-content {
+            background: white;
+            padding: 24px;
+            border-radius: 18px;
+            width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: scaleIn 0.25s ease;
+        }
+
+        .modal-actions {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .participant-edit-row {
+            grid-template-columns: 2fr 1fr 1fr 1fr auto;
+        }
+
+        .remove-btn {
+            padding: 10px 14px;
+            border-radius: 10px;
+        }
+        .standings-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        
+            gap: 1rem;
+        }
+
+        .group-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .filter-btn {
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #475569;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+            .filter-btn:hover {
+                background: #f1f5f9;
+                transform: translateY(-2px);
+            }
+
+            .filter-btn.active {
+                background: linear-gradient(135deg, #312e81, #6d28d9);
+                color: white;
+                border-color: transparent;
+                box-shadow: 0 8px 18px rgba(79, 70, 229, 0.22);
+            }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+            .table-header h2 {
+                font-size: 20px;
+                margin-bottom: 4px;
+            }
+
+            .table-header p {
+                color: #64748b;
+                font-size: 14px;
+            }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        .standings-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+            .standings-table th,
+            .standings-table td {
+                padding: 14px 16px;
+                border-bottom: 1px solid #e5e7eb;
+                text-align: left;
+                font-size: 14px;
+            }
+
+            .standings-table th {
+                background: #f8fafc;
+                color: #334155;
+                font-weight: 800;
+            }
+
+            .standings-table tbody tr:hover {
+                background: #f8fafc;
+            }
+
+            .standings-table tbody tr.rank-gold {
+                background: #fffbeb;
+            }
+
+            .standings-table tbody tr.rank-silver {
+                background: #f8fafc;
+            }
+
+            .standings-table tbody tr.rank-bronze {
+                background: #fff7ed;
+            }
+
+        .college-total-box {
+            margin-top: 18px;
+            padding: 16px 18px;
+            background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+            border: 1px solid #ddd6fe;
+            border-radius: 16px;
+            font-weight: 800;
+            color: #312e81;
+            text-align: right;
+        }
+
+            .college-total-box span {
+                font-size: 22px;
+                color: #1e3a8a;
+            }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 1px solid #e2e8f0;
+            background: white;
+            color: #475569;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+            .filter-btn:hover {
+                background: #f1f5f9;
+                transform: translateY(-1px);
+            }
+
+            .filter-btn.active {
+                background: linear-gradient(135deg, #4f46e5, #7c3aed);
+                color: white;
+                border-color: transparent;
+                box-shadow: 0 6px 14px rgba(79, 70, 229, 0.25);
+            }
+
+        @media (max-width: 768px) {
+            .standings-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .group-buttons {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes navPop {
+            from {
+                transform: scale(0.97);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInBtn {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.94);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        /* ===== FULL RESPONSIVE: ПРЕДСТАВИТЕЛЬ ===== */
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .content,
+        .card,
+        .table-wrapper,
+        .modal-content,
+        .modal-box {
+            max-width: 100%;
+        }
+
+        .content {
+            min-width: 0;
+        }
+
+        /* Ноутбуки */
+        @media (max-width: 1400px) {
+            .sidebar {
+                width: 240px;
+            }
+
+            .content {
+                margin-left: 240px;
+                padding: 40px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        /* Планшеты */
+        @media (max-width: 1000px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                padding: 18px;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 24px;
+            }
+
+            .logo {
+                width: 100%;
+                padding: 0 0 14px;
+                margin-bottom: 8px;
+            }
+
+            .nav-item,
+            .logout {
+                display: inline-flex;
+                margin: 0;
+                white-space: nowrap;
+            }
+
+            .logout {
+                margin-top: 0;
+            }
+
+            .form-grid,
+            .participant-edit-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .modal-content {
+                width: 94vw;
+            }
+        }
+
+        /* Телефоны */
+        @media (max-width: 700px) {
+            body {
+                background: #f8fafc;
+            }
+
+            .sidebar {
+                padding: 12px;
+                border-radius: 0 0 20px 20px;
+                box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+            }
+
+            .logo h2 {
+                font-size: 18px;
+            }
+
+            .logo p {
+                font-size: 12px;
+            }
+
+            .nav-item,
+            .logout {
+                font-size: 13px;
+                padding: 10px 12px;
+                border-radius: 999px;
+            }
+
+            .content {
+                margin-left: 0;
+                width: 100%;
+                padding: 14px 10px 28px;
+                overflow-x: hidden;
+            }
+
+            h1 {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .card {
+                width: 100%;
+                padding: 14px;
+                border-radius: 16px;
+                margin-bottom: 14px;
+                overflow: hidden;
+            }
+
+            .form-grid,
+            .participant-edit-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            select,
+            input {
+                font-size: 14px;
+                padding: 11px 12px;
+            }
+
+            .btn {
+                width: 100%;
+                margin: 0 0 8px 0;
+                padding: 12px 14px;
+            }
+
+            .action-btn {
+                width: auto;
+                padding: 7px 10px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            .table-header,
+            .standings-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            .group-buttons {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 4px;
+            }
+
+            .filter-btn {
+                flex: 0 0 auto;
+                font-size: 13px;
+                padding: 9px 14px;
+            }
+
+            .table-wrapper {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                border-radius: 16px;
+            }
+
+            table,
+            .standings-table {
+                min-width: 620px;
+                width: 100%;
+            }
+
+                th,
+                td,
+                .standings-table th,
+                .standings-table td {
+                    padding: 10px 12px;
+                    font-size: 13px;
+                    white-space: nowrap;
+                }
+
+            .badge {
+                font-size: 11px;
+                padding: 5px 8px;
+            }
+
+            .college-total-box {
+                text-align: left;
+                font-size: 14px;
+            }
+
+                .college-total-box span {
+                    font-size: 20px;
+                }
+
+            .modal,
+            .modal-overlay {
+                align-items: flex-end;
+            }
+
+            .modal-content,
+            .modal-box {
+                width: 100%;
+                max-height: 90vh;
+                border-radius: 20px 20px 0 0;
+                padding: 18px;
+                overflow-y: auto;
+            }
+
+            .modal-actions {
+                text-align: stretch;
+            }
+
+                .modal-actions .btn {
+                    width: 100%;
+                }
+        }
+
+        /* Маленькие телефоны */
+        @media (max-width: 420px) {
+            .content {
+                padding: 12px 8px 24px;
+            }
+
+            .card {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            .nav-item,
+            .logout {
+                font-size: 12px;
+                padding: 9px 10px;
+            }
+
+            table,
+            .standings-table {
+                min-width: 540px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Спартакиада</h2>
+            <p>Панель представителя</p>
+        </div>
+
+        <button class="nav-item active" data-section="profile">Профиль</button>
+        <button class="nav-item" data-section="application">Подать заявку</button>
+        <button class="nav-item" data-section="my-applications">Мои заявки</button>
+        <button class="nav-item" data-section="standings">Итоговая таблица</button>
+
+        <button id="logoutBtn" class="logout">Выйти</button>
+    </aside>
+
+    <main class="content">
+
+        <section id="profile-section" class="section active">
+            <h1>Профиль колледжа</h1>
+
+            <div class="card">
+                <h2 id="collegeName">Колледж</h2>
+                <p>Вы вошли как представитель колледжа.</p>
+            </div>
+        </section>
+
+        <section id="application-section" class="section">
+            <h1>Подать заявку</h1>
+
+            <div class="card">
+                <label for="sportSelect">Выберите вид спорта</label>
+                <select id="sportSelect">
+                    <option value="">Загрузка...</option>
+                </select>
+            </div>
+
+            <div id="applicationFormContainer"></div>
+        </section>
+
+        <section id="my-applications-section" class="section">
+            <h1>Мои заявки</h1>
+
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Вид спорта</th>
+                            <th>Статус</th>
+                            <th>Дата</th>
+                            <th>Комментарий</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applicationsBody">
+                        <tr>
+                            <td colspan="5">Заявок пока нет</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="standings-section" class="section">
+            <h1>Итоговая таблица</h1>
+
+            <div class="standings-toolbar">
+                <div class="standings-view-buttons">
+                    <button class="filter-btn standings-view-btn active" data-view="general">
+                        Общая таблица
+                    </button>
+
+                    <button class="filter-btn standings-view-btn" data-view="college">
+                        Мой колледж
+                    </button>
+                </div>
+
+                <button class="btn btn-primary" id="refreshStandingsBtn">
+                    Обновить
+                </button>
+            </div>
+
+            <div id="generalStandingsBlock" class="card">
+                <div class="table-header">
+                    <div>
+                        <h2>Общий рейтинг колледжей</h2>
+                        <p>Итоговые баллы всех колледжей</p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th>Место</th>
+                                <th>Колледж</th>
+                                <th>Баллы</th>
+                                <th>Доп. баллы</th>
+                                <th>Итого</th>
+                            </tr>
+                        </thead>
+                        <tbody id="generalStandingsBody">
+                            <tr>
+                                <td colspan="5">Загрузка...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="myCollegeResultsBlock" class="card" style="display:none;">
+                <div class="table-header">
+                    <div>
+                        <h2>Результаты моего колледжа</h2>
+                        <p id="myCollegeNameForResults">Ваш колледж</p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th>Вид спорта</th>
+                                <th>Место</th>
+                                <th>Баллы</th>
+                                <th>Штраф / бонус</th>
+                                <th>Итого</th>
+                            </tr>
+                        </thead>
+                        <tbody id="myCollegeResultsBody">
+                            <tr>
+                                <td colspan="5">Загрузка...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="college-total-box">
+                    Общий итог колледжа:
+                    <span id="myCollegeTotalPoints">0</span>
+                    баллов
+                </div>
+            </div>
+        </section>
+
+
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <h2>Редактирование заявки</h2>
+
+                <div id="editFormContainer"></div>
+
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" onclick="closeModal()">Отмена</button>
+                    <button class="btn btn-secondary" onclick="addParticipantRow()">
+                        + Участник
+                    </button>
+                    <button class="btn btn-secondary" onclick="saveEdited('draft')">Сохранить как черновик</button>
+                    <button class="btn btn-primary" onclick="saveEdited('submitted')">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        if (localStorage.getItem('role') !== 'representative') {
+            window.location.replace('/login.html');
+        }
+        let sports = [];
+        let selectedSport = null;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            initNavigation();
+            initProfile();
+            await loadSports();
+        });
+
+        function initProfile() {
+            const collegeName = localStorage.getItem('collegeName') || 'Ваш колледж';
+            document.getElementById('collegeName').textContent = collegeName;
+        }
+        function showSuccessModal(message) {
+            const old = document.getElementById('successModal');
+            if (old) old.remove();
+
+            document.body.insertAdjacentHTML('beforeend', `
+        <div id="successModal" class="modal-overlay">
+            <div class="modal-box">
+                <h3>Готово</h3>
+                <p>${escapeHtml(message)}</p>
+                <button class="btn btn-primary" onclick="closeSuccessModal()">OK</button>
+            </div>
+        </div>
+    `);
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('successModal');
+            if (modal) modal.remove();
+        }
+
+        function initNavigation() {
+            document.querySelectorAll('.nav-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.getElementById(`${btn.dataset.section}-section`).classList.add('active');
+                    if (btn.dataset.section === 'my-applications') {
+                        loadMyApplications();
+                    }
+                    if (btn.dataset.section === 'standings') {
+                            initStandings();
+                        }
+                    
+                });
+            });
+
+            document.getElementById('logoutBtn').addEventListener('click', () => {
+                localStorage.clear();
+                window.location.href = '/login.html';
+            });
+        }
+
+        async function loadSports() {
+            const select = document.getElementById('sportSelect');
+
+            try {
+                const response = await fetch('/api/sports');
+
+                if (!response.ok) {
+                    throw new Error('Не удалось загрузить виды спорта');
+                }
+
+                sports = await response.json();
+
+                select.innerHTML = '<option value="">Выберите вид спорта</option>';
+
+                sports.forEach(sport => {
+                    select.innerHTML += `
+                <option value="${sport.id}">
+                    ${escapeHtml(sport.name)}
+                </option>
+            `;
+                });
+
+                select.addEventListener('change', onSportChanged);
+
+            } catch (error) {
+                console.error(error);
+                select.innerHTML = '<option value="">Ошибка загрузки</option>';
+            }
+        }
+
+        function onSportChanged() {
+            const sportId = Number(this.value);
+            selectedSport = sports.find(s => s.id === sportId);
+
+            const container = document.getElementById('applicationFormContainer');
+
+            if (!selectedSport) {
+                container.innerHTML = '';
+                return;
+            }
+
+            renderApplicationForm(selectedSport);
+        }
+
+        function renderApplicationForm(sport) {
+            const container = document.getElementById('applicationFormContainer');
+
+            let html = `
+                <div class="card">
+                    <h2>${escapeHtml(sport.name)}</h2>
+                    <p>Тип: ${escapeHtml(sport.sportType || '—')}</p>
+            `;
+
+            if (isCross(sport)) {
+                html += renderCrossFields();
+            } else {
+                html += renderDefaultFields(sport);
+            }
+
+            html += `
+                    <div style="margin-top: 22px;">
+                        <button class="btn btn-secondary" onclick="saveApplication('draft')">
+                            Сохранить как черновик
+                        </button>
+                        <button class="btn btn-primary" onclick="saveApplication('submitted')">
+                            Отправить заявку
+                        </button>
+                    </div>
+
+                    <div id="applicationStatus" class="status"></div>
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        function renderDefaultFields(sport) {
+            let html = '';
+
+            const maleCount = sport.participantsMale || 0;
+            const femaleCount = sport.participantsFemale || 0;
+
+            if (maleCount > 0) {
+                html += `<div class="block-title">Юноши — ${maleCount}</div>`;
+                for (let i = 1; i <= maleCount; i++) {
+                    html += participantRow('M', `Юноша ${i}`);
+                }
+            }
+
+            if (femaleCount > 0) {
+                html += `<div class="block-title">Девушки — ${femaleCount}</div>`;
+                for (let i = 1; i <= femaleCount; i++) {
+                    html += participantRow('F', `Девушка ${i}`);
+                }
+            }
+
+            return html;
+        }
+
+        function renderCrossFields() {
+            let html = '';
+
+            html += `<div class="block-title">Юноши — 4 участника</div>`;
+            for (let i = 1; i <= 4; i++) {
+                html += participantRow('M', `Юноша ${i}`, ['2000 м', '3000 м']);
+            }
+
+            html += `<div class="block-title">Девушки — 4 участницы</div>`;
+            for (let i = 1; i <= 4; i++) {
+                html += participantRow('F', `Девушка ${i}`, ['1000 м', '2000 м']);
+            }
+
+            return html;
+        }
+
+        function participantRow(gender, label, distances = null) {
+            return `
+                <div class="form-grid participant-row" data-gender="${gender}">
+                    <input class="fullName" placeholder="${label}: ФИО">
+                    <input class="birthDate" type="date">
+                    <input class="sportNumber" type="number" placeholder="Номер">
+
+                    ${distances
+                    ? `<select class="distance">
+                                ${distances.map(d => `<option value="${d}">${d}</option>`).join('')}
+                               </select>`
+                    : `<input class="genderText" value="${gender === 'M' ? 'Юноша' : 'Девушка'}" disabled>`
+                }
+                </div>
+            `;
+        }
+
+        async function saveApplication(status) {
+
+            if (!selectedSport) {
+                showErrorModal('Выберите вид спорта');
+                return;
+            }
+
+            const participants = collectParticipants();
+
+            if (!validateParticipants(participants)) {
+                showErrorModal('Заполните хотя бы одного участника полностью');
+                return;
+            }
+
+            if (isCross(selectedSport) && !validateCrossDistances(participants)) {
+                showErrorModal('В кроссе должно быть по 2 участника на каждую дистанцию');
+                return;
+            }
+
+            const payload = {
+                collegeId: Number(localStorage.getItem('collegeId')),
+                sportId: selectedSport.id,
+                status: status,
+                participants: participants
+            };
+
+            try {
+                const response = await fetch('/api/applications/representative', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    showErrorModal(data.message || 'Ошибка сохранения заявки');
+                    return;
+                }
+
+                showSuccessModal(
+                    status === 'draft'
+                        ? 'Черновик успешно сохранён'
+                        : 'Заявка успешно отправлена'
+                );
+
+                document.getElementById('applicationFormContainer').innerHTML = '';
+                document.getElementById('sportSelect').value = '';
+
+            } catch (error) {
+                console.error(error);
+                showErrorModal('Ошибка соединения с сервером');
+            }
+        }
+
+        function collectParticipants() {
+            const rows = document.querySelectorAll('.participant-row');
+
+            return Array.from(rows)
+                .map(row => ({
+                    fullName: row.querySelector('.fullName').value.trim(),
+                    birthDate: row.querySelector('.birthDate').value,
+                    gender: row.dataset.gender,
+                    sportNumber: Number(row.querySelector('.sportNumber').value),
+                    distance: row.querySelector('.distance')?.value || null
+                }))
+                .filter(p => p.fullName !== '');
+        }
+
+        function validateParticipants(participants) {
+            if (participants.length === 0) return false;
+
+            return participants.every(p =>
+                p.fullName &&
+                p.birthDate &&
+                p.sportNumber > 0
+            );
+        }
+
+        function validateCrossDistances(participants) {
+            const boys2000 = participants.filter(p => p.gender === 'M' && p.distance === '2000 м').length;
+            const boys3000 = participants.filter(p => p.gender === 'M' && p.distance === '3000 м').length;
+            const girls1000 = participants.filter(p => p.gender === 'F' && p.distance === '1000 м').length;
+            const girls2000 = participants.filter(p => p.gender === 'F' && p.distance === '2000 м').length;
+
+            return boys2000 === 2 &&
+                boys3000 === 2 &&
+                girls1000 === 2 &&
+                girls2000 === 2;
+        }
+
+        function isCross(sport) {
+            return sport.name &&
+                sport.name.toLowerCase().includes('кросс');
+        }
+
+        
+
+        function closeErrorModal() {
+            const modal = document.getElementById('errorModal');
+            if (modal) modal.remove();
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/[&<>]/g, m => {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+
+        async function loadMyApplications() {
+            const tbody = document.getElementById('applicationsBody');
+            const collegeId = Number(localStorage.getItem('collegeId'));
+
+            if (!collegeId) {
+                tbody.innerHTML = '<tr><td colspan="4">Колледж не найден</td></tr>';
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/applications/my?collegeId=${collegeId}`);
+
+                if (!response.ok) {
+                    throw new Error('Ошибка загрузки заявок');
+                }
+
+                const applications = await response.json();
+
+                if (applications.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="4">Заявок пока нет</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = applications.map(app => `
+            <tr>
+                <td>${escapeHtml(app.sportName)}</td>
+                <td>${renderStatus(app.status)}</td>
+                <td>${new Date(app.createdAt).toLocaleDateString()}</td>
+                <td>${escapeHtml(app.adminComment || '—')}</td>
+              <td>
+    ${(app.status === 'draft' || app.status === 'rework')
+                        ? `
+            <button 
+                class="action-btn ${app.status === 'draft' ? 'action-edit' : 'action-rework'}"
+                onclick="openEditApplication(${app.id})"
+            >
+                ${app.status === 'draft' ? '✏️ Редактировать  ' : '🔁 Исправить'}
+            </button>
+        `
+                        : '—'}
+</td>
+            </tr>
+
+        `).join('');
+
+
+            } catch (error) {
+                console.error(error);
+                tbody.innerHTML = '<tr><td colspan="4">Ошибка загрузки</td></tr>';
+            }
+        }
+
+        let editingApplicationId = null;
+        let editingSport = null;
+
+        window.openEditApplication = async function (id) {
+            try {
+                editingApplicationId = id;
+
+                const response = await fetch(`/api/applications/${id}/edit`);
+
+                if (!response.ok) {
+                    showErrorModal('Не удалось загрузить заявку');
+                    return;
+                }
+
+                const app = await response.json();
+
+                editingSport = sports.find(s => s.id === app.sportId);
+
+                if (!editingSport) {
+                    showErrorModal('Вид спорта не найден');
+                    return;
+                }
+
+                renderEditForm(editingSport, app.participants);
+
+                document.getElementById('editModal').classList.add('show');
+
+            } catch (error) {
+                console.error(error);
+                showErrorModal('Ошибка загрузки заявки');
+            }
+        };
+
+
+        function fillParticipants(participants) {
+            const rows = document.querySelectorAll('.form-grid');
+
+            participants.forEach((p, i) => {
+                if (!rows[i]) return;
+
+                const inputs = rows[i].querySelectorAll('input, select');
+
+                inputs[0].value = p.fullName;
+                inputs[1].value = p.birthDate?.split('T')[0];
+                inputs[2].value = p.sportNumber;
+            });
+        }
+
+        function renderStatus(status) {
+            const map = {
+                draft: '<span class="badge gray">Черновик</span>',
+                submitted: '<span class="badge blue">Отправлена</span>',
+                approved: '<span class="badge green">Утверждена</span>',
+                rejected: '<span class="badge red">Отклонена</span>',
+                rework: '<span class="badge orange">На доработку</span>'
+            };
+
+            return map[status] || `<span class="badge gray">${escapeHtml(status)}</span>`;
+        }
+
+        function renderEditForm(sport, participants) {
+            const container = document.getElementById('editFormContainer');
+
+            let html = `<div class="card"><h2>${sport.name}</h2>`;
+
+            participants.forEach(p => {
+                html += `
+            <div class="form-grid participant-edit-row">
+                <input value="${p.fullName || ''}" placeholder="ФИО">
+                <input type="date" value="${p.birthDate?.split('T')[0] || ''}">
+                <input value="${p.sportNumber || ''}" placeholder="Номер">
+                <select>
+                    <option value="M" ${p.gender === 'M' ? 'selected' : ''}>Юноша</option>
+                    <option value="F" ${p.gender === 'F' ? 'selected' : ''}>Девушка</option>
+                </select>
+                <button type="button" class="btn btn-danger remove-btn" onclick="removeParticipantRow(this)">Удалить</button>
+            </div>
+        `;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        function addParticipantRow() {
+            const container = document.getElementById('editFormContainer');
+            const card = container.querySelector('.card');
+
+            const row = document.createElement('div');
+            row.className = 'form-grid participant-edit-row';
+
+            row.innerHTML = `
+        <input placeholder="ФИО">
+        <input type="date">
+        <input placeholder="Номер">
+        <select>
+            <option value="M">Юноша</option>
+            <option value="F">Девушка</option>
+        </select>
+        
+    `;
+
+            card.appendChild(row);
+        }
+
+        async function saveEdited(status) {
+            const participants = collectParticipantsFromModal();
+
+            if (participants.length === 0) {
+                showErrorModal('Добавьте хотя бы одного участника');
+                return;
+            }
+
+            const payload = {
+                status: status,
+                participants: participants
+            };
+
+            try {
+                const response = await fetch(`/api/applications/${editingApplicationId}/representative-update`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (participants.some(p => !p.fullName || !p.birthDate)) {
+                    showErrorModal('Укажите данные участников');
+                    return;
+                }
+
+                if (!response.ok) {
+                    showErrorModal(data.message || 'Ошибка сохранения заявки');
+                    return;
+                }
+
+               
+
+                closeModal();
+                await loadMyApplications();
+
+                showSuccessModal(
+                    status === 'draft'
+                        ? 'Черновик сохранён'
+                        : 'Заявка отправлена'
+                );
+
+            } catch (error) {
+                console.error(error);
+                showErrorModal('Ошибка соединения с сервером');
+            }
+        }
+
+        function collectParticipantsFromModal() {
+            const rows = document.querySelectorAll('#editFormContainer .participant-edit-row');
+
+            return Array.from(rows)
+                .map(row => {
+                    const inputs = row.querySelectorAll('input');
+                    const genderSelect = row.querySelector('select');
+
+                    return {
+                        fullName: inputs[0].value.trim(),
+                        birthDate: inputs[1].value,
+                        sportNumber: Number(inputs[2].value),
+                        gender: genderSelect ? genderSelect.value : 'M'
+                    };
+                })
+                .filter(p => p.fullName || p.birthDate || p.sportNumber);
+        }
+
+        function closeModal() {
+            document.getElementById('editModal').classList.remove('show');
+        }
+
+        function removeParticipantRow(btn) {
+            btn.closest('.participant-edit-row').remove();
+        }
+            function showErrorModal(message) {
+        const old = document.getElementById('errorModal');
+        if (old) old.remove();
+
+        document.body.insertAdjacentHTML('beforeend', `
+    <div id="errorModal" class="modal-overlay">
+        <div class="modal-box">
+            <h3 style="color:#dc2626;">Ошибка</h3>
+            <p>${escapeHtml(message)}</p>
+            <button class="btn btn-primary" onclick="closeErrorModal()">OK</button>
+        </div>
+    </div>
+`);
+        }
+        let currentView = 'general';
+
+        function initStandings() {
+            document.querySelectorAll('.standings-view-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const view = btn.dataset.view;
+                    switchView(view);
+                });
+            });
+
+            document.getElementById('refreshStandingsBtn')?.addEventListener('click', () => {
+                if (currentView === 'general') {
+                    loadGeneralStandings();
+                } else {
+                    loadMyCollegeStandings();
+                }
+            });
+
+            switchView('general');
+        }
+
+        function switchView(view) {
+            currentView = view;
+
+            document.querySelectorAll('.standings-view-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.view === view);
+            });
+
+            document.getElementById('generalStandingsBlock').style.display =
+                view === 'general' ? 'block' : 'none';
+
+            document.getElementById('myCollegeResultsBlock').style.display =
+                view === 'college' ? 'block' : 'none';
+
+            if (view === 'general') {
+                loadGeneralStandings();
+            } else {
+                loadMyCollegeStandings();
+            }
+        }
+
+        async function loadGeneralStandings() {
+            const tbody = document.getElementById('generalStandingsBody');
+            tbody.innerHTML = '<tr><td colspan="5">Загрузка...</td></tr>';
+
+            try {
+                const res = await fetch('/api/results/standings?group=all');
+                if (!res.ok) throw new Error();
+
+                const data = await res.json();
+
+                if (!data.length) {
+                    tbody.innerHTML = '<tr><td colspan="5">Нет данных</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = data.map(item => `
+            <tr class="${getRankClass(item.place)}">
+                <td>${item.place}</td>
+                <td>${escapeHtml(item.collegeName)}</td>
+                <td>${item.basePoints}</td>
+                <td>${item.bonusPoints || 0}</td>
+                <td><strong>${item.totalPoints}</strong></td>
+            </tr>
+        `).join('');
+
+            } catch {
+                tbody.innerHTML = '<tr><td colspan="5">Ошибка загрузки</td></tr>';
+            }
+        }
+
+        async function loadMyCollegeStandings() {
+            const tbody = document.getElementById('myCollegeResultsBody');
+            const totalBox = document.getElementById('myCollegeTotalPoints');
+            const nameBox = document.getElementById('myCollegeNameForResults');
+
+            const collegeId = Number(localStorage.getItem('collegeId'));
+            const collegeName = localStorage.getItem('collegeName') || '';
+
+            nameBox.textContent = collegeName;
+
+            tbody.innerHTML = '<tr><td colspan="5">Загрузка...</td></tr>';
+
+            try {
+                const sports = await fetch('/api/sports').then(r => r.json());
+
+                let rows = [];
+                let total = 0;
+
+                for (const sport of sports) {
+                    const res = await fetch(`/api/results/standings?group=all&sportId=${sport.id}`);
+                    if (!res.ok) continue;
+
+                    const data = await res.json();
+
+                    const my = data.find(x =>
+                        Number(x.collegeId) === collegeId ||
+                        normalize(x.collegeName) === normalize(collegeName)
+                    );
+
+                    if (!my) continue;
+
+                    rows.push({
+                        sport: sport.name,
+                        place: my.place,
+                        base: my.basePoints,
+                        bonus: my.bonusPoints || 0,
+                        total: my.totalPoints
+                    });
+
+                    total += Number(my.totalPoints || 0);
+                }
+
+                if (!rows.length) {
+                    tbody.innerHTML = '<tr><td colspan="5">Нет результатов</td></tr>';
+                    totalBox.textContent = 0;
+                    return;
+                }
+
+                tbody.innerHTML = rows.map(r => `
+            <tr>
+                <td>${escapeHtml(r.sport)}</td>
+                <td>${r.place}</td>
+                <td>${r.base}</td>
+                <td>${r.bonus}</td>
+                <td><strong>${r.total}</strong></td>
+            </tr>
+        `).join('');
+
+                totalBox.textContent = total;
+
+            } catch (e) {
+                console.error(e);
+                tbody.innerHTML = '<tr><td colspan="5">Ошибка загрузки</td></tr>';
+            }
+        }
+
+        function getRankClass(place) {
+            if (place === 1) return 'rank-gold';
+            if (place === 2) return 'rank-silver';
+            if (place === 3) return 'rank-bronze';
+            return '';
+        }
+
+        function normalize(str) {
+            return String(str || '').toLowerCase().trim();
+        }
+
+
+    </script>
+
+</body>
+</html>

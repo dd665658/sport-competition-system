@@ -1,0 +1,310 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\controllers\\resultscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\resultscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\controllers\\collegescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\collegescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\controllers\\penaltiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\penaltiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\controllers\\participantscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\participantscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\controllers\\sportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\sportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\models\\sport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\sport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\models\\teamresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\teamresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\models\\penalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\penalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\wwwroot\\representative.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\representative.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\models\\participant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\participant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\controllers\\applicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\applicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\wwwroot\\login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|c:\\users\\lipya\\desktop\\\u043C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\webapplication1\\webapplication1\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86D032AA-793E-4D7F-9498-B868428AB9AB}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "admin.html",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\wwwroot\\admin.html",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\admin.html",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\wwwroot\\admin.html",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\admin.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAN4LAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-03-15T12:36:37.529Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAwwGcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T18:16:28.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ParticipantsController.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\ParticipantsController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ParticipantsController.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\ParticipantsController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ParticipantsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:03:21.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SportsController.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\SportsController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\SportsController.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\SportsController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\SportsController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:02:19.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CollegesController.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\CollegesController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\CollegesController.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\CollegesController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\CollegesController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwDwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:01:56.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ResultsController.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\ResultsController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ResultsController.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\ResultsController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ResultsController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAuwOcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-12T15:54:23.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T16:05:52.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Sport.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Models\\Sport.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Sport.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Models\\Sport.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Sport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:01:40.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PenaltiesController.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\PenaltiesController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\PenaltiesController.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\PenaltiesController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\PenaltiesController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T06:54:53.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TeamResult.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Models\\TeamResult.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\TeamResult.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Models\\TeamResult.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\TeamResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:01:34.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Penalty.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Models\\Penalty.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Penalty.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Models\\Penalty.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Penalty.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:01:19.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "WebApplication1\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-05T17:24:01.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebApplication1\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebApplication1\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-05T18:00:26.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "representative.html",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\wwwroot\\representative.html",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\representative.html",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\wwwroot\\representative.html",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\representative.html",
+              "ViewState": "AgIAADYDAAAAAAAAAAAcwFQDAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-04-25T19:37:34.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Participant.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Models\\Participant.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Participant.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Models\\Participant.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Participant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T16:58:33.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ApplicationsController.cs",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\ApplicationsController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ApplicationsController.cs",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\Controllers\\ApplicationsController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ApplicationsController.cs",
+              "ViewState": "AgIAACcBAAAAAAAAAAAkwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T18:16:23.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "login.html",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\wwwroot\\login.html",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\login.html",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\wwwroot\\login.html",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\login.html",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAAABUBAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-04-26T16:53:38.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\lipya\\Desktop\\\u041C\u043E\u0436\u0435\u0442 \u0438 \u0434\u0438\u043F\u043B\u043E\u043C\\WebApplication1\\WebApplication1\\wwwroot\\index.html",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\index.html",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-03-15T10:44:24.016Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

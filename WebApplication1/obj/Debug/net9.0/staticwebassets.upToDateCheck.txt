@@ -1,0 +1,8 @@
+wwwroot\index.html
+wwwroot\login.html
+wwwroot\representative.html
+wwwroot\admin.html
+C:\Users\lipya\Desktop\Может и диплом\WebApplication1\WebApplication1\wwwroot\index.html
+C:\Users\lipya\Desktop\Может и диплом\WebApplication1\WebApplication1\wwwroot\login.html
+C:\Users\lipya\Desktop\Может и диплом\WebApplication1\WebApplication1\wwwroot\representative.html
+C:\Users\lipya\Desktop\Может и диплом\WebApplication1\WebApplication1\wwwroot\admin.html

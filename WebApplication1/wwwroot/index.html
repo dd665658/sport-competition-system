@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Спартакиада колледжей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f0f0f0;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Колледжи-участники</h1>
+    <ul id="colleges-list"></ul>
+
+    <script>
+        // Адрес API: используем относительный путь, так как HTML и API на одном сервере
+        fetch('/api/colleges')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('colleges-list');
+                data.forEach(name => {
+                    const li = document.createElement('li');
+                    li.textContent = name;
+                    list.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                document.body.innerHTML += '<p style="color:red">Не удалось загрузить список колледжей</p>';
+            });
+    </script>
+</body>
+</html>
